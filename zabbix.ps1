@@ -3,8 +3,8 @@ $Key = "02aa4e5e90b94c17fe5fa59d3228f5efe48d8c348712baff284189717e208828"
 $Path = "C:\Program Files\zabbix"
 $ZabbixName="zabbix.msi"
 $LogFile=$HOME+"\log.txt"
-$UserLink="https://clck.ru/3L6wWb"
-$ZabbixLink="https://clck.ru/3LA5Mv"
+$UserLink="https://raw.githubusercontent.com/lyublyu-shabit/zbArchive/a5d79c7228d7351145f89ff380eedf9cb92fbb5c/userParam.conf"
+$ZabbixLink="https://raw.githubusercontent.com/lyublyu-shabit/zbArchive/main/zabbix.msi"
 
 mkdir $Path
 wget $ZabbixLink -OutFile $Path\$ZabbixName
