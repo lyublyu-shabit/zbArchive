@@ -1,4 +1,4 @@
-$HostId = "TestSec"
+$HostId = "VeryStongUserSecurity"
 $Key = "02aa4e5e90b94c17fe5fa59d3228f5efe48d8c348712baff284189717e208828"
 $Path = "C:\Program Files\zabbix"
 $ZabbixName="zabbix.msi"
@@ -19,10 +19,9 @@ try
     "/qn",
     "SERVERACTIVE=192.168.58.226",
     "SERVER=127.0.0.1",
-    "HOSTNAME=ServerAlex",
     "HOSTMETADATA=OKS_",
     "TLSCONNECT=psk",
-	"TLSPSKVALUE=02aa4e5e90b94c17fe5fa59d3228f5efe48d8c348712baff284189717e208828",
+	"TLSPSKVALUE=87b895a7956add9f1a9f508ff47b5cd2fb7d09281346cdb110a8f4ceeafe138d",
     "TLSACCEPT=psk",
     "ENABLEPATH=1",
     "TLSPSKIDENTITY=$HostId",
