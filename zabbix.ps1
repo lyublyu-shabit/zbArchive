@@ -1,5 +1,3 @@
-$HostId = "VeryStongUserSecurity"
-$Key = "02aa4e5e90b94c17fe5fa59d3228f5efe48d8c348712baff284189717e208828"
 $Path = "C:\Program Files\zabbix"
 $ZabbixName="zabbix.msi"
 $LogFile=$HOME+"\log.txt"
@@ -24,11 +22,15 @@ try
     "TLSPSKVALUE=87b895a7956add9f1a9f508ff47b5cd2fb7d09281346cdb110a8f4ceeafe138d",
     "TLSACCEPT=psk",
     "ENABLEPATH=1",
-    "TLSPSKIDENTITY=$HostId",
+    "TLSPSKIDENTITY=VeryStongUserSecurity",
     "/l*v `"$Path\log.txt`""
 ) -Wait
 
 wget $UserLink -OutFile "C:\Program Files\Zabbix Agent 2\zabbix_agent2.d\UserParam.conf"
+
+Start-Sleep -second 7
+echo "Restarting Zabbix agent2, please wait"
+
 Stop-Service 'Zabbix Agent 2'
 Start-Service 'Zabbix Agent 2'
 echo "HELLO"
