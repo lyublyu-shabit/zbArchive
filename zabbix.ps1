@@ -17,7 +17,7 @@ try
     Start-Process msiexec -ArgumentList @(
     "/i `"$Path\$ZabbixName`"",
     "/qn",
-    "SERVERACTIVE=192.168.58.226",
+    "SERVERACTIVE=77.73.67.35",
     "SERVER=127.0.0.1",
     "HOSTMETADATA=OKS_",
     "TLSCONNECT=psk",
