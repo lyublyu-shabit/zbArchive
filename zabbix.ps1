@@ -28,8 +28,8 @@ try
 
 wget $UserLink -OutFile "C:\Program Files\Zabbix Agent 2\zabbix_agent2.d\UserParam.conf"
 
-echo "Restarting Zabbix agent2, please wait"
 Start-Sleep -second 7
+echo "Restarting Zabbix agent2, please wait"
 
 Stop-Service 'Zabbix Agent 2'
 Start-Service 'Zabbix Agent 2'
