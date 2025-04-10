@@ -12,9 +12,9 @@ mkdir $Path
 
 try 
 {
-	wget $ZabbixLink -OutFile $Path\$ZabbixName
-	Start-Sleep -second 5
-	Start-Process msiexec -ArgumentList @(
+    wget $ZabbixLink -OutFile $Path\$ZabbixName
+    Start-Sleep -second 5
+    Start-Process msiexec -ArgumentList @(
     "/i `"$Path\$ZabbixName`"",
     "/qn",
     "SERVERACTIVE=192.168.58.226",
