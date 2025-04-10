@@ -7,11 +7,14 @@ $UserLink="https://raw.githubusercontent.com/lyublyu-shabit/zbArchive/a5d79c7228
 $ZabbixLink="https://raw.githubusercontent.com/lyublyu-shabit/zbArchive/main/zabbix.msi"
 
 mkdir $Path
-wget $ZabbixLink -OutFile $Path\$ZabbixName
 
-echo $key > "$Path\zabbix.txt"
-Start-Sleep -second 5
-Start-Process msiexec -ArgumentList @(
+
+
+try 
+{
+	wget $ZabbixLink -OutFile $Path\$ZabbixName
+	Start-Sleep -second 5
+	Start-Process msiexec -ArgumentList @(
     "/i `"$Path\$ZabbixName`"",
     "/qn",
     "SERVERACTIVE=192.168.58.226",
@@ -19,10 +22,10 @@ Start-Process msiexec -ArgumentList @(
     "HOSTNAME=ServerAlex",
     "HOSTMETADATA=OKS_",
     "TLSCONNECT=psk",
+	"TLSPSKVALUE=02aa4e5e90b94c17fe5fa59d3228f5efe48d8c348712baff284189717e208828",
     "TLSACCEPT=psk",
     "ENABLEPATH=1",
     "TLSPSKIDENTITY=$HostId",
-    "TLSPSKFILE=`"$Path\zabbix.txt`"",
     "/l*v `"$Path\log.txt`""
 ) -Wait
 
@@ -31,3 +34,9 @@ Stop-Service 'Zabbix Agent 2'
 Start-Service 'Zabbix Agent 2'
 echo "HELLO"
 Pause
+}
+catch
+{
+	echo $PSItem
+}
+
