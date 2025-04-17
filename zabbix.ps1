@@ -23,7 +23,6 @@ try
     "TLSACCEPT=psk",
     "ENABLEPATH=1",
     "TLSPSKIDENTITY=VeryStongUserSecurity",
-    "EnableRemoteCommands=1",
     "/l*v `"$Path\log.txt`""
 ) -Wait
 
