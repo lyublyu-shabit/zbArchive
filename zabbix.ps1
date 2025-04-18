@@ -1,7 +1,7 @@
 $Path = "C:\Program Files\zabbix"
 $ZabbixName="zabbix.msi"
 $LogFile=$HOME+"\log.txt"
-$UserLink="https://raw.githubusercontent.com/lyublyu-shabit/zbArchive/a5d79c7228d7351145f89ff380eedf9cb92fbb5c/userParam.conf"
+$UserLink="https://raw.githubusercontent.com/lyublyu-shabit/zbArchive/main/userParam.conf"
 $ZabbixLink="https://raw.githubusercontent.com/lyublyu-shabit/zbArchive/main/zabbix.msi"
 
 mkdir $Path
