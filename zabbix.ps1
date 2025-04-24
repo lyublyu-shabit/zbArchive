@@ -40,7 +40,7 @@ try
     "TLSPSKIDENTITY=$identity"
 ) -Wait
 
-wget $hardwareLink -OutFile "C:\Program Files\Zabbix Agent 2\zabbix_agent2.d\OpenHardwareMonitorLib.dll"
+wget $hardwareLink -OutFile "C:\Program Files\Zabbix Agent 2\OpenHardwareMonitorLib.dll"
 wget $UserLink -OutFile "C:\Program Files\Zabbix Agent 2\zabbix_agent2.d\UserParam.conf"
 wget $updateLink -OutFile "C:\Program Files\Zabbix Agent 2\zbUpdate.ps1"
 
