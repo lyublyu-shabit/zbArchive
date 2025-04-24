@@ -40,11 +40,11 @@ try
     "TLSPSKIDENTITY=$identity"
 ) -Wait
 
+Start-Sleep -second 7
+
 wget $hardwareLink -OutFile "C:\Program Files\Zabbix Agent 2\OpenHardwareMonitorLib.dll"
 wget $UserLink -OutFile "C:\Program Files\Zabbix Agent 2\zabbix_agent2.d\UserParam.conf"
 wget $updateLink -OutFile "C:\Program Files\Zabbix Agent 2\zbUpdate.ps1"
-
-Start-Sleep -second 7
 
 if ((Get-Service 'Zabbix Agent 2').Status | findstr.exe "Running"){
     Restart-Service 'Zabbix Agent 2'
