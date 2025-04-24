@@ -19,7 +19,7 @@ $key="87b895a7956add9f1a9f508ff47b5cd2fb7d09281346cdb110a8f4ceeafe138d"
 #
 
 
-if (Test-Path $Path -eq $false) {
+if ((Test-Path $Path) -eq $false) {
     mkdir $path
 }
 
