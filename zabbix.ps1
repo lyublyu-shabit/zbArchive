@@ -42,7 +42,7 @@ try
 
 wget $hardwareLink -OutFile "C:\Program Files\Zabbix Agent 2\zabbix_agent2.d\OpenHardwareMonitorLib.dll"
 wget $UserLink -OutFile "C:\Program Files\Zabbix Agent 2\zabbix_agent2.d\UserParam.conf"
-wget $updateLink -OutFile "C:\Program Files\Zabbix Agent 2\zabbix_agent2.d\zbUpdate.ps1"
+wget $updateLink -OutFile "C:\Program Files\Zabbix Agent 2\zbUpdate.ps1"
 
 Start-Sleep -second 7
 
@@ -51,7 +51,7 @@ if ((Get-Service 'Zabbix Agent 2').Status | findstr.exe "Running"){
 }
 
 #task create
-$action = New-ScheduledTaskAction -Execute "powershell.exe" -Argument "-NoProfile -ExecutionPolicy Bypass -File `"C:\Program Files\Zabbix Agent 2\zabbix_agent2.d\zbUpdate.ps1`""
+$action = New-ScheduledTaskAction -Execute "powershell.exe" -Argument "-NoProfile -ExecutionPolicy Bypass -File `"C:\Program Files\Zabbix Agent 2\zbUpdate.ps1`""
 $trigger = New-ScheduledTaskTrigger -Once -At (Get-Date) -RepetitionInterval (New-TimeSpan -Hours 2)
 # Регистрируем задачу
 Register-ScheduledTask -TaskName "zbUpdate" -Action $action -Trigger $trigger -RunLevel Highest
